@@ -33,17 +33,6 @@ if ( ! class_exists( 'WP_REST_Options' ) ) :
             return 'wp/v2';
         }
 
-
-	    /**
-	     * Get WP API Options namespace.
-	     *
-	     * @since 1.0.0
-	     * @return string
-	     */
-	    public static function get_plugin_namespace() {
-		    return 'wp-api-options/v1';
-	    }
-
         /**
          * Register options routes for WP API v2.
          *
@@ -52,14 +41,14 @@ if ( ! class_exists( 'WP_REST_Options' ) ) :
          */
         public function register_routes() {
 
-            register_rest_route( self::get_plugin_namespace(), '/options', array(
+            register_rest_route( self::get_api_namespace(), '/options', array(
                 array(
                     'methods'  => WP_REST_Server::READABLE,
                     'callback' => array( $this, 'get_options' ),
                 )
             ) );
 
-            register_rest_route( self::get_plugin_namespace(), '/options/(?P<id>\w+)', array(
+            register_rest_route( self::get_api_namespace(), '/options/(?P<id>\w+)', array(
                 array(
                     'methods'  => WP_REST_Server::READABLE,
                     'callback' => array( $this, 'get_option' ),
@@ -81,7 +70,7 @@ if ( ! class_exists( 'WP_REST_Options' ) ) :
          */
         public static function get_options() {
 
-            $rest_url = trailingslashit( get_rest_url() . self::get_plugin_namespace() . '/options/' );
+            $rest_url = trailingslashit( get_rest_url() . self::get_api_namespace() . '/options/' );
             $default_whitelist_options = self::get_whitelist_options();
 
             $whitelist_options = array_merge(
