@@ -2,7 +2,7 @@
 Contributors: oleg2tor
 Tags: wp-api, wp-rest-api, json-rest-api, json, options, rest, api, wp-rest-options, general, discussion, media, reading, writing
 Requires at least: 3.6.0
-Tested up to: 4.4.2
+Tested up to: 4.5
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
