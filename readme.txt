@@ -38,5 +38,8 @@ https://github.com/oleg2tor/wp-rest-api-options
 Nothing to show really, this plugin has no settings or frontend, it just extends WP API with new endpoints. It's up to you how to use them :)
 
 == Changelog ==
+= 1.0.1 =
+* Fix: init function name
+
 = 1.0.0 =
 * First public release

@@ -3,7 +3,7 @@
 Plugin Name: WP REST API Options
 Description: WP REST API Options - returns list of options and their values.
 Author: Oleg Kostin
-Version: 1.0.0
+Version: 1.0.1
 Author URI: http://pmr.io
 */
 
@@ -21,7 +21,7 @@ include_once 'includes/wp-api-options-v2.php';
 if ( in_array( 'rest-api/plugin.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
 
 
-	function wp_rest_permalinks_init() {
+	function wp_rest_options_init() {
 
 		/**
 		 * Init JSON REST API options routes.
@@ -38,7 +38,7 @@ if ( in_array( 'rest-api/plugin.php', apply_filters( 'active_plugins', get_optio
 		}
 	}
 
-	add_action( 'init', 'wp_rest_permalinks_init' );
+	add_action( 'init', 'wp_rest_options_init' );
 
 
 endif;
